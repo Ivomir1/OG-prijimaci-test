@@ -19,7 +19,7 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
     /**
      * Where to redirect users after login.
