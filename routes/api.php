@@ -15,12 +15,17 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::middleware(['handle.exceptions'])->group(function () {
-    Route::post('/check-workdayDB', [WorkdayController::class, 'checkWorkdayDB']); // Ukol č.1
-    Route::get('/tasks', [TaskController::class, 'index']); // RESTí věci
-    Route::get('/tasks/{id}', [TaskController::class, 'show']);
-    Route::post('/tasks', [TaskController::class, 'store']);
-    Route::put('/tasks/{id}', [TaskController::class, 'update']);
-    Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
-    Route::post('/tasks/task-duration', [TaskController::class, 'TaskDuration']); // Ukol č.2
-});
+Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
+
+
+//Route::middleware('auth:sanctum')->group(function () { // pouze pro přihlášeného uživatele
+    Route::middleware(['handle.exceptions'])->group(function () {
+        Route::post('/check-workdayDB', [WorkdayController::class, 'checkWorkdayDB']); // Ukol č.1
+        Route::get('/tasks', [TaskController::class, 'index']); // RESTí věci
+        Route::get('/tasks/{id}', [TaskController::class, 'show']);
+        Route::post('/tasks', [TaskController::class, 'store']);
+        Route::put('/tasks/{id}', [TaskController::class, 'update']);
+        Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
+        Route::post('/tasks/task-duration', [TaskController::class, 'TaskDuration']); // Ukol č.2
+    });
+//});    

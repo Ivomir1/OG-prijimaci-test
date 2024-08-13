@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WorkdayController;
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
