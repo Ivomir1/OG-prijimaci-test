@@ -12,7 +12,7 @@ class ExampleTest extends TestCase
     /** @test */
     public function my_check_workday_db()
     {
-        $response = $this->get('/api/check-workdayDB?date=2024-08-10&code=ZA');
+        $response = $this->post('/api/check-workdayDB?date=2024-08-10&code=ZA');
         $response->assertStatus(200);
         $response->assertJsonStructure(['date', 'isWorkday', 'reason', 'country']);
     }

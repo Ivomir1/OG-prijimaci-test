@@ -7,7 +7,6 @@
     "require": {
         "php": "^7.3|^8.0",
         "cmixin/business-day": "^1.18",
-        "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
